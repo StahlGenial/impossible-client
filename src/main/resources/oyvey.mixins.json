@@ -13,7 +13,8 @@
     "MixinKeyboard",
     "MixinMouse",
     "MixinRenderTickCounter",
-    "MixinWorldRenderer"
+    "MixinWorldRenderer",
+    "MixinTitleScreen"
   ],
   "injectors": {
     "defaultRequire": 1

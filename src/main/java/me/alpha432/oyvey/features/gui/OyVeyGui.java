@@ -51,7 +51,7 @@ public class OyVeyGui extends Screen {
         int x = -84;
         for (Module.Category category : OyVey.moduleManager.getCategories()) {
             if (category == Module.Category.HUD) continue;
-            Widget panel = new Widget(category.getName(), x += 90, 4, true);
+            Widget panel = new Widget(category.getName(), x += 120, 4, true);
             OyVey.moduleManager.stream()
                     .filter(m -> m.getCategory() == category && !m.hidden)
                     .map(ModuleButton::new)

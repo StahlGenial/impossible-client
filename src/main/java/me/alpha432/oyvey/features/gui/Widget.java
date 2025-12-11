@@ -33,8 +33,8 @@ public class Widget
         super(name);
         this.x = x;
         this.y = y;
-        this.width = 88;
-        this.height = 18;
+        this.width = 112;
+        this.height = 20;
         this.open = open;
     }
 
