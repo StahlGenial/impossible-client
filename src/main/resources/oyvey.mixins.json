@@ -14,7 +14,9 @@
     "MixinMouse",
     "MixinRenderTickCounter",
     "MixinWorldRenderer",
-    "MixinTitleScreen"
+    "MixinTitleScreen",
+    "IMixin.ILivingEntity",
+    "MixinEntity"
   ],
   "injectors": {
     "defaultRequire": 1

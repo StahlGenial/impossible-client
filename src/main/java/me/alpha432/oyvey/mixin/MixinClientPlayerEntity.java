@@ -1,8 +1,11 @@
 package me.alpha432.oyvey.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import me.alpha432.oyvey.OyVey;
 import me.alpha432.oyvey.event.Stage;
 import me.alpha432.oyvey.event.impl.TickEvent;
 import me.alpha432.oyvey.event.impl.UpdateWalkingPlayerEvent;
+import me.alpha432.oyvey.features.modules.movement.NoSlow;
 import net.minecraft.client.player.LocalPlayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,5 +29,13 @@ public class MixinClientPlayerEntity {
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;sendPosition()V", shift = At.Shift.AFTER))
     private void tickHook3(CallbackInfo ci) {
         EVENT_BUS.post(new UpdateWalkingPlayerEvent(Stage.POST));
+    }
+    @ModifyExpressionValue(method = "modifyInput", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;isUsingItem()Z"))
+    private boolean aVoid(boolean original) {
+        NoSlow noSlow = OyVey.moduleManager.getModuleByClass(NoSlow.class);
+        if (noSlow.isEnabled()) {
+            return false;
+        }
+        return original;
     }
 }

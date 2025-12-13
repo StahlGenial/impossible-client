@@ -9,6 +9,8 @@ import net.minecraft.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Random;
+
 public class OyVey implements ModInitializer, ClientModInitializer {
     public static final String NAME = "OyVey";
     public static final String VERSION = SharedConstants.getCurrentVersion().name();
