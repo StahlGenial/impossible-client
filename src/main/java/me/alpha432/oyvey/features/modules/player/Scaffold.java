@@ -12,7 +12,6 @@ public class Scaffold extends Module {
         super("Scaffold", "", Category.PLAYER);
     }
     @Subscribe public void onTick() {
-
         BlockPos pos = mc.player.blockPosition().below();
         Impossible.rotationManager.rotateToBlockPos(pos);
         mc.player.swing(InteractionHand.MAIN_HAND);

@@ -49,7 +49,7 @@ public class Impossible implements ModInitializer, ClientModInitializer {
         eventManager.init();
         moduleManager.init();
         rotationManager.init();
-
+        hudEditorScreen = new HudEditorScreen();
         configManager = new ConfigManager();
         configManager.load();
         colorManager.init();
