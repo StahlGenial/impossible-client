@@ -69,6 +69,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new MultiTask());
         register(new AutoMiner());
         register(new Aura());
+        register(new Announcer());
     }
 
     public void register(Module module) {
