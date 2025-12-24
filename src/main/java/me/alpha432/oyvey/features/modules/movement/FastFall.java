@@ -28,7 +28,7 @@ public class FastFall extends Module {
     }
     private void isFall() {
         if (checkPos()) {
-            Impossible.TIMER = 100f;
+            Impossible.TIMER = 5f;
             mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, -1, mc.player.getDeltaMovement().z);
             returnTimer();
         }
